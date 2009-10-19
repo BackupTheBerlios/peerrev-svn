@@ -1,0 +1,10 @@
+Acknowledgements
+----------------
+
+Das Gutachtersystem has been created by Jochen Koubek.
+
+Bug fixes and extensions by Jens-Martin Loebel.
+
+Licensed publishing and documentation, small bugs fixed by Andrea Knaut. 
+
+Who else?

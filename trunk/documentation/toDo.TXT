@@ -1,0 +1,50 @@
+REFACTORING
+Refactoring auf MVC
+	Datenbank-Abstraktionsschicht
+	Bibliothek wichtiger Funktionen
+		fehlerausgabe(string $fehlermeldung){ }
+		
+Refactoring to Objects
+
+i18n
+	Ausgabefunktion
+
+
+STRUKTUR
+Der Config-Ordner enthŠlt noch zu viele funktional verschiedene Dateien.
+Der pix-Ordner muss nicht so prominent platziert sein.
+
+INTERFACE
+Konfigurationsinterface der Aufgaben
+Beispieltexte Aufgabenstellungen
+Session Management
+
+INSTALLATION
+Fehleingaben bei der Installation abfangen
+Aufgabenordner anlegen auch fŸr Windows-Systeme anlegen
+
+DESIGN
+- favicon einbinden
+- php auf Filesystem/Webserver verstecken und dokumentieren
+- unix or dos encoding for the config-files -> entscheiden
+- englisch /deutsch Version - einheitlich
+
+
+- mailen_auftraege.php und report.php sind mit korrekten Mailkonfigurationen zu versehen, auslagern in common.inc.php (Mailserver; Kursleiter-Mailadress..) -> nicht zu Ende bearbeitet - mailen_auftraege.php wirft noch sofort offensichtliche Fehler aus
+
+
+DOKUMENTATION
+- Versionsnummer fehlt
+- Saemtliche Seitentitel einheitlich auf "Das Gutachtersystem -.."  festlegen
+- Bugfixes dokumentieren mit Hilfe von Diffs
+
+
+BACKEND SICHERHEIT
+- fuer den Testbereich Sicherheitsabfragen anlegen, Konzept des state=test... in tool.php-Comment nochmal checken
+ERROR HANDLING
+- "Ordner uploads/aufgabeX fehlt...." in einreichen_reply.php
+
+
+FEATURES
+Varianzanalyse der Gutachten
+Einbinden der Gruppen in die statistischen Auswertungen

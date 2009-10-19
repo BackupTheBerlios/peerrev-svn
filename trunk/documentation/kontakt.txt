@@ -1,0 +1,8 @@
+KONTAKT
+-------
+
+Das Gutachtersystem ist in einer fruehen Entwicklungsphase, insbesondere einige Sicherheitsluecken muessen noch behoben werden. 
+Wir freuen uns ueber Feedback, Fehlerreports und sonstige hilfreiche Hinweise zur Weiterentwicklung.
+
+Bitte senden an jochen.koubek@hu-berlin.de.
+

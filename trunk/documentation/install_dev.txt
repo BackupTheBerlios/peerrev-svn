@@ -1,0 +1,54 @@
+--------------------------------------------------------
+!!INSTALLATION DER SYSTEMUMGEBUNG DES GUTACHTERSYSTEMS!!
+--------------------------------------------------------
+
+INHALT
+
+1. [empfohlen für alle Betriebssysteme] Webserver, MySQL und phpMyAdmin mit XAMPP: Die Alles-in-einem-Installation 
+
+2. [MacOSX] Konfiguration bzw. Installation des Webservers mit PHP-Modul und MySQL und PHPMyAdmin 
+
+3. [todo: andere Betriebssysteme - modulare Installation der Komponenten Webserver, PHP-Interpreter, MySQL]
+----------------------------
+
+Um das Gutachtersystem einrichten, konfigurieren und nutzen zu können, müssen folgende Software-Komponenten bereits installiert sein: 
+	◦	ein Webserver mit PHP-Modul, empfohlen: Apache2 und PHP5
+	◦	MySQL-Datenbankmanagementsystem, empfohlen: MySQL5.
+	◦	[optional] MySQL-PHP-Manager phpMyAdmin
+	
+siehe auch: KOMPONENTEN_GS.JPG
+
+Ein Weg ist die in Kapitel 1 beschriebene Nutzung von XAMPP zur Herstellung dieser Systemumgebung. Ein anderer die in den Folgekapiteln modulare Einrichtung der genannten Komponenten je nach Betriebssystem.
+
+### 1.	Webserver, MySQL und phpMyAdmin mit XAMPP: 
+	Die Alles-in-einem-Installation ###
+	[geeignet für alle gängigen Betriebssysteme]
+
+Das XAMPP-Paket zur integriert die Installation des Apache-Webservers mit PHP-Modul und MySQL-Datenbankmanagementsystem (MySQL-DBMS) sowie des über die Webbrowser-Oberfläche zu bedienenden MySQL-PHP-Managers phpMyAdmin. Das XAMPP-Paket empfiehlt sich, da es die automatische Installation der erforderlichen Software-Komponenten für verschiedene Bertriebssysteme ermöglicht. Außerdem integriert es verschiedene einfach zu bedienende und nützliche Konfigurationswerkzeuge für den Apache-Webserver inkl. PHP und das MySQL-Databasemanagementsystem.
+
+DOWNLOAD XAMPP: Zum Download von XAMPP für Ihr Betriebssystem gelangen Sie über die Projekt-Website: 
+http://www.apachefriends.org 
+Beachten Sie die dortigen ausführlichen Installationshinweise.
+
+### 2.	[MacOSX] Konfiguration bzw. Installation des Webservers mit PHP-Modul und MySQL und PHPMyAdmin ###
+
+	Nutzen Sie entweder den in Mac OS X bereits integrierten Apache-Webserver und installieren PHP in MacOSX, MySQL in Mac OS X und PHPMyAdmin in Mac OS X einzeln nach. (1. Variante)
+	Oder installieren Sie sich die neuesten Versionen all dieser Komponenten mit Hilfe von MacPorts. (2. Variante)
+	
+	##1.	Variante##
+	▪	Nutzen des integrierten Apache-Webservers in MacOS X
+	
+	Um den im Darwin von MacOSX integrierten Apache-Webserver zu benutzen, muss das Web Sharing in den Systemeinstellungen des Betriebssystems aktiviert werden. 
+	(Apple-Menü im Finder → Systemeinstellungen → Sharing → Web Sharing anhaken) 
+	Den erfolgreichen Start des Apache-Webservers können Sie prüfen, ob die Standard-Websites eingesehen werden können unter http://localhost (im Dateisystem unter /Library/Users/IhrUsername/Sites) beziehungsweise unter 
+	http://localhost/~IhrUsername (im Dateisystem unter /Library/WebServer/Documents) 
+	
+	▪	Installation des PHP-Moduls in MacOS X
+
+	Bitte befolgen Sie entweder die Instruktionen zur Installation einer binären Version des PHP-Moduls unter http://www.entropy.ch/software/macosx/php/ oder die Installationshinweise zur Installation vom Sourcecode unter http://developer.apple.com/internet/opensource/php.html. Die Installation vom Sourcecode aus setzt voraus, dass Sie einen C-Compiler installiert haben. F¨r MacOS X gibt es die Entwicklungsumgebung XCode, über die Apple Developer Connection (ADC) zu beziehen, mit der sich ein solcher Compiler inklusive hilfreicher Entwicklungstools installieren läßt. Eine kostenlose Registrierung ist dafür allerdings erforderlich. 
+	
+	##2. Variante##
+	
+### 3. [todo: andere Betriebssysteme - modulare Installation der Komponenten Webserver, PHP-Interpreter, MySQL] ###
+	
+[to do: Verweis auf Installationshinweise im Internet je nach System]

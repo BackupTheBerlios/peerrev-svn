@@ -1,0 +1,29 @@
+/* Copyright 2005, 2006 Jochen Koubek - v0.1.2. 
+
+For contributors see contributors.txt.
+
+This file is part of the software 'Review Your Peers'.
+
+'Review Your Peers' is free software; you can redistribute it and/or modify
+it under the terms of the MIT License.
+
+You should have received a copy of the MIT License
+along with this program. See COPYING.txt.
+The license-text is based on http://www.opensource.org/licenses/mit-license.php. */
+
+
+body { padding: 1em 5em;}
+form {border: 1px solid black; padding: .5em}
+p, li, ol, ul, th, td       { color: black; font-size: 10px; line-height: 13px; font-family: Verdana, Arial }
+a     { color: blue; font-size: 10px; font-family: Verdana, Arial; text-decoration: none }
+h1 { font-size: 14px; font-family: Verdana, Arial }
+h2 { font-size: 12px; font-family: Verdana, Arial }
+h3 { font-weight: bold; font-size: 12px; line-height: 15px; font-family: Verdana, Arial }
+table {
+	border-collapse: collapse;
+	bordercolor= #111111;
+}
+#content {
+		border: 1px solid #000;
+		padding: 1em;
+}

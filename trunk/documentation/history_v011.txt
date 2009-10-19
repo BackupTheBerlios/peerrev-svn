@@ -1,0 +1,240 @@
+Anpassungen der ersten offiziellen Version (Listing siehe listingv0.jpg)
+
+- Gutachtersystem, v0.1.1
+
+1. SHOW CONFIGURATION BLOCKS IN HTML / PHP 
+file(s): connect.php, create_tables.php, commandroot.php
+- added comments marking blocks where configuration has to be done to customize the system
+
+/**
+  BEGIN CONFIGURATION AREA
+**/
+
+
+/**
+  END CONFIGURATION AREA
+**/
+
+2. UNCOMMENT HU-CONFIGURATION AND REPLACED BY GENERIC CONFIG
+File(s): Documents/anmelden.php, Documents/anmelden_reply.php, Documents/einreichen.php, Documents/einreichen_reply.php, Documents/index.php, Documents/index2.php, Documents/index3.php, Documents/index5.php, Documents/gutachten.php, Documents/gutachten_reply.php, Documents/regeln.php, Documents/regelnGutachten.php, Documents/ranking.php, Documents/einreichen2.php, Documents/error.html, Documents/gutachten_anzeigen.php, Documents/gutachten_yes.php, Documents/gutachten_no.php, Documents/punktestand.php, Documents/top.php
+Documents/atmIn/create_tables.php, Documents/atmIn/auswerten_gutachter.php,
+Documents/atmIn/index.php, Documents/atmIn/commandroot.php, Documents/atmIn/regex.php 
+
+- uncommented blocks that were immediately connected to the course-administration at Humboldt-University:
+
+REPLACED by "Zur&uuml;ck zur Startseite"
+#in files 'Documents/anmelden.php', 'Documents/anmelden_reply.php', 'Documents/einreichen_reply.php', 'Documents/einreichen.php', 'gutachten.php',
+'gutachten_reply.php', 'Documents/error.html', 'Documents/gutachten_anzeigen.php', 'Documents/gutachten_no.php', 'Documents/punktestand.php', 'Documents/top.php'
+
+	<!--<span>
+	<a style="font-size: 120%;" href="http://lms.cms.hu-berlin.de/moodle/course/view.php?id=2909" target="_top">Zur&uuml;ck zum Moodle-Kurs...</a>
+	</span>-->
+
+			
+	/*else
+	printf("<a style=\"font-size: 120%%;\" href=\"http://lms.cms.hu-berlin.de/moodle/course/view.php?id=2909\" target=\"_top\">Zur&uuml;ck zum Moodle-Kurs...</a>");
+	*/?
+	
+	<title>Gutachtersystem - Fehler</title>
+	<!--<title>HU-Berlin - Informatik in Bildung und Gesellschaft - Sie werden weitergeleitet...</title>
+	<meta http-equiv="refresh" content="0; URL=http://lms.cms.hu-berlin.de/moodle/course/view.php?id=2909">-->
+
+	<!--
+	Die angeforderte Seite wurde nicht gefunden. Sie werden zum <a href="http://lms.cms.hu-berlin.de/moodle/course/view.php?id=2909">Moodle-Kurs</a> weitergeleitet...
+	-->
+	
+REPLACED by "Gutachtersystem - Fehler"
+#in file 'Documents/error.html':
+
+	<!--<title>HU-Berlin - Informatik in Bildung und Gesellschaft - Sie werden weitergeleitet...</title>
+	<meta http-equiv="refresh" content="0; URL=http://lms.cms.hu-berlin.de/moodle/course/view.php?id=2909">-->
+
+
+3. JUST UNCOMMENTED-NOT REPLACED
+
+#in file 'connect.php':
+
+//	$anzahlGutachten=5;
+
+#in files 'Documents/atmIn/create_tables.php', 'Documents/index.php', 'Documents/index2.php', 'Documents/index3.php', 'Documents/index5.php', 'Documents/regeln.php', 'Documents/regelnGutachten.php', 'Documents/einreichen2.php', 'Documents/ranking.php', 'Documents/atmIn/commandroot.php':
+	<!--		<p>Aktualisiert am <csobj format="ShortDate" h="12" region="3" t="DateTime" w="64">13.10.2005</csobj> <a href="mailto:jochen.koubek@hu-berlin.de">Jochen Koubek</a></p>-->
+
+#in file 'Documents/einreichen.php':
+	echo "<p>Die Abgabefrist f&uuml;r Aufgabe $aufgabeNummer ist wie<!-- <a href='http://lms.cms.hu-berlin.de/moodle/course/view.php?id=2909' target='_top'>--> angek&uuml;ndigt</a> am ". date("d.m.y", strtotime($aufgabeAbgebenDatum)) . " um 1 Uhr abgelaufen.</p>";
+
+#in files 'Documents/index.php', 'Documents/index2.php', 'Documents/index3.php', 'Documents/index5.php', 'Documents/regeln.php':
+	<!--<h2>Verlaufsplanung (&Auml;nderungen vorbehalten):</h2>
+											<? include "ablauf.php"; ?>-->
+							
+		<!--						<tr>
+									<td colspan="2">
+									<p></p>
+									<p></p>
+									<hr noshade size="1">
+									</td>
+									</tr><tr>
+									<td colspan="2">
+									<h1>Studie 1 (nicht bewertet): </h1>
+									<p><b>Abgabetermin: </b>03.11.2005.</p>
+									<p><b>Format:</b> InDesign-Dokument.</p>
+									<p><b>Dokument-Name: </b><i>[Begriff]</i>Matrikelnr.indd, z.B. &raquo;<i>serifen1234567.indd</i>&laquo;</p>
+									<p><b>Vorgaben: </b>Zwecks Erweiterung unseres <a href="http://waste.informatik.hu-berlin.de/Galerie/mumelexikon/">Multimedia-Lexikons</a> visualisieren Sie bitte einen Begriff aus der Typographie mit InDesign. Stellen Sie das Dokument auf &raquo;<i>adams.informatik.hu-berlin.de</i>&laquo; in den Ordner &raquo;<i>Studie_1</i>&laquo; Orientieren Sie sich bei der Gestaltung am Dokument &raquo;<a href="http://waste.informatik.hu-berlin.de/koubek/lehre/0304/digitalemedien/serifen.ind">serifen.ind</a>&laquo;. Reservieren Sie einen Begriff, der noch nicht <a href="http://waste.informatik.hu-berlin.de/Galerie/mumelexikon/typo.html">bearbeitet</a> wurde durch Einstellen eines Dummy-Dokuments bzw. eines leeren Ordners. Das fertige Dokument bitte nicht in diesen Platzhalterordner speichern, sondern diesen ersetzen, damit ich nicht alle Ordner durchsuchen muss. <br>
+										Geeignete Begriffe finden sich z.B. unter <a href="http://typolexikon.de/" target="_blank">typolexikon.de</a>. Beachten Sie, dass die Texte dort urheberrechtlich gesch&uuml;tzt sind. Auch w&auml;re es sch&ouml;n, wenn Sie nicht die Wikipedia o.&auml;- kopieren w&uuml;rden, sondern sich um eigene Formulierungen bem&uuml;hen.</p>
+									<hr noshade size="1">
+									<p></p>
+								</td>
+							</tr>-->
+
+#in file 'Documents/regeln.php':
+	<!--	<p>Der zeitliche Ablauf des Praktikums wird im <a href="#Anchor-47857">Ablaufplan</a> gegliedert.</p>-->
+	
+#in file 'Documents/auswerten_gutachter.php':
+	/*//Studien
+	echo "<div id='studien'><h1>Teilnahme an Studien</h1>";
+	echo "<p>Studien fliessen nicht in die Wertung ein, zeigen aber eine grunds&auml;tzlich Tendenz"; 
+
+	$rs3=mysql_query("SELECT aufgabenr FROM studien WHERE autor='$nr'");
+	while ($rs3_array=mysql_fetch_row($rs3))
+	{
+		echo "<p>Studie $rs3_array[0] bearbeitet</p>";
+	}
+	echo "</div>";*/
+
+#in file 'Documents/atmIn/index.php':
+
+	<!--	<p><a href="studien.php">Studien eintragen</a><br>
+			Studien en bloc eintragen.</p>-->
+
+	<!--<p><a href="../report.php">report<br>
+			</a>Feedback-Forum f&uuml;r Teilnehmer</p>-->
+			
+#in file 'Documents/atmIn/commandroot.php':
+
+	<h1><!-- <a href="tigerteam.php">--><img src="tool.jpg" alt="" width="110" height="81" border="0"><!-- </a>--></h1>
+	<h1>MySQL-Command</h1>
+	<h1><!-- <a href="tigerteam.php">&lt;-</a>--></h1>
+		
+#in file 'Documents/atmIn/command.php':
+
+	<h1><!--<a href="tigerteam.php">--><img src="tool.jpg" alt="" width="110" height="81" border="0"><!--</a>--></h1>
+		
+#in file 'Documents/atmIn/regex.php':
+
+	<h1><!--<a href="tigerteam.php">--><img src="tool.jpg" alt="" width="110" height="81" border="0"><!--</a>--></h1>
+		
+3. ADDING WINDOWS-LINEFEED IN ALL FILES (<CRLF>) 
+file(s): all
+- proposal Stefan --> dos2unix bietet einfache Konvertierung, Webserver kommt damit klar
+
+4. ADDING LINK TO FAVICON IN HTML-HEAD
+file(s): Documents/index.php, /Documents/atmIn/index.php
+- <link rel="icon" href="favicon.ico" type="image/ico" />
+
+5. NEW FILES 
+Documents/atmIn/insert_parameter.sql
+- insert-commands for parameter-table copied from parameter.sql to separate file insert_parameter.sql
+
+6. DELETED FILES
+Documents/report.php
+Documents/gutachten_yes.php
+Documents/einreichenFormular.html
+Documents/atmIn/index_old.php
+Documents/atmIn/Alias connect.php
+Documents/atmIn/parameter.sql
+Documents/atmIn/agl-tmp-1.html
+Documents/atmIn/studien.php
+Documents/atmIn/tests.php
+
+7. CHANGED TABLE 'dokumente' in create_tables.php - added line -
+"zusatzpunkte int(2) NOT NULL default '0',".
+
+8. CHANGED TABLE 'gutachter' in create_tables.php - added line -
+"anmerkung mediumtext NOT NULL,".
+Spaltenanzahl angepasst in tool.php
+$query = "INSERT INTO gutachter VALUES ('11$i', 'name$i', 'name$i@mail.de','0','0','','$datum')";
+
+9. Anmerkungen der Gutachter anzeigen - angepasst auf table-structure der gutachter-Tabelle (siehe 8.)
+	//Kommentar
+	echo "<div id='kommentar'><h1>Anmerkung</h1><p>$rs_array[5]</p></div>";
+	
+10. in connect.php Variable $aufgabeNummer in den Konfigurationsbereich kopiert und Zeile 78 angepasst:
+	$rs=mysql_query("SELECT * FROM $tabelle WHERE aufgabeNummer=$aufgabeNummer", $con);
+
+11. in anmelden.php aus "Vorname Name" "Nickname" gemacht, Zeile 35: 									<p>Nickname:<br>
+
+12. mailen_auftraege.php - "<hr>\n" nach weiter unten kopiert
+print ("<p>$mailaddress erfolgreich</p><hr>\n");
+
+13. in anmerkung_gutacher.php Ausgabe geändert: 
+"ID" in "Name des Gutachters" (Zeile 89),
+"Gutachter" in "ID des Gutachters" (Zeile 91)
+
+14. neuer Datenbank-Struktur-Dump mit den Anpassungen der DB erzeugt als neue dm.sql
+
+15. Maildresse des Kursadmins in connect.php als Variable $admin_mailaddress hinterlegt - wird in den Dateien mailen_auftraege.php, gutachten_reply.php genutzt
+
+16. in /Documents die Ordner 
+/Uploads1
+/Uploads2
+/Uploads3
+/Uploads4
+/Uploads5
+/Uploads6
+/Uploads7
+hinzugefügt und folgende Dateien-Verlinkungen (die vorher auf "http://adams.informatik.hu-berlin.de/Uploads$nr" bzw. /Librabry/Webserver/Documents/Uploads$nr" gezeigt haben den Link mit den der in connect.php hinterlegten globalen Variable $uploadserver: '$uploadserver/Uploads$gutachtennr' bzw. '$uploadserver/Uploads$nr' erhalten, angepasst in
+anzeigen_dokument.php
+anzeigen_auftrag.php
+beauftragen.php
+dig.php
+einreichen_reply.php
+mailen_auftraege.php
+nullpunkte.php
+top.php
+
+17. Link zum Umgang mit unleserlichen Dokumenten geändert von Verweis auf "http://adams.informatik.hu-berlin.de/regeln.php" oder moodle-Glossar in relativen Link auf "regeln.php" geändert:
+anzeigen_auftrag.php
+beauftragen.php
+
+18. in connect.php eingefügt:
+
+$anzahlGutachten=$gutachtenAnzahl;
+
+19. in einreichen.php für die Aufgabennummer und die Dateiendung mit Variablen ersetzt und einreichenForumlar.html-Daten komplett übernommen 
+
+20. in atmIn/create_tables.php folgendes auskommentiert und stattdessen aus connect.php mit 'require "../../connect.php";' verfügbar gemacht 
+
+/*function error_db()
+{
+	echo "<p>" . mysql_errno() . ": " . mysql_error() . "</p>";
+	$error_database = true;
+	$error_database_text = "Datenbankfehler: ";
+}
+
+
+  $dbms = "127.0.0.1";
+  $database = "reviewer";
+  $login = "gutachter";
+  $password = "gutachter";	 
+*/
+
+21. in regeln.php eine Marke für den Umgang mit unlesbaren Dokumenten hinzugefügt:
+<p><a name="unlesbar"></a><b>Unlesbare Dokumente</b> und in mailen_auftrage.php entsprechend den alten Link auskommentiert und die Marke verlinkt: <!--http://lms.cms.hu-berlin.de/moodle/mod/glossary/view.php?id=80162&mode=entry&hook=6374-->http://localhost/gutachtersystem_v011/Documents/regeln.php#unlesbar</b> 
+
+22. neue Variable für den absoluten Pfad des Upload-Servers eingefügt, da dieser als Link an die Gutachter_innen versandt wird:
+# in file connect.php:
+			$uploadserver="http://localhost/gutachtersystem_v011/Documents"; //server where you store the uploaded files
+# in file mailen_auftraege.php dementsprechend:
+			$mailtext .= "<p><b>Gutachten $i : Dokument $uploadserver/Uploads$gutachtennr/". $auftrag[0]. " \n</b><br>\n" .	"Anmerkungen des Autors: <br>\n" . $auftrag[1] . "\n<p>\n";
+				
+23. Inhaltliche Ergänzungen der Ablauf- und Testdoku in /Documents/atmIn/index.php:
+
+- Tippfehler und inhaltl. Ergänzung:
+Jedem eingetragenen Gutachter werden 5 eingereichte Dokumente von Aufgabe 1 zur Begutachtung vorgelegt und per Mail zugestellt mit dem zu startenden Skript <a href="mailen_auftraege.php">mailen_auftraege.php</a>.
+
+24. neue Variable für den absoluten Pfad des Gutachter-Servers eingefügt, da dieser als Link an die Gutachter_innen versandt wird:
+# in file connect.php:
+  			$peerrevserver="http://localhost/gutachtersystem_v011"; //server where you stored the gutachtersystem
+# in file mailen_auftraege.php dementsprechend:
+			$mailtext .= "<p>Hinweise zur Bewertung und zum Umgang mit unleserlichen Dokumenten:<br>\n $peerrevserver/Documents/regeln.php#unlesbar</p>";
+# in file beauftragen.php dementsprechend:
+			$mailtext .= "Achtung: Hinweise zur Bewertung, zum Fontproblem und zum Umgang mit unleserlichen Dokumenten:\n $peerrevserver/Documents/regeln.php";

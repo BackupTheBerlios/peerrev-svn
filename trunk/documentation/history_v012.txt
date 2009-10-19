@@ -1,0 +1,93 @@
+CHANGES ON CODE 
+
+[24012008]
+
+- fehlenden Lizenztext in begutachten_gutachter.php eingef¸gt, kaputte Lizentexte in anzeigen_gutachten.php, aendern_gutachten.php repariert
+- beauftragen.php war nicht ausf¸hrbar mit Testdaten, da mehr als 20 Gutachten und Variable $gutachtenAnzahl daher nicht initialisiert -> Fall abgedeckt und $gutachtenAnzahl=5 f¸r diesen Fall
+- in begutachte_gutacher.php, atmIn/index.php, dig.php, tools.php und beauftragen.php Seitentitel gem‰ﬂ Funktionalit‰t und auf Gutachtersystem angepasst
+- den Testmodus "Gutachten generieren" repariert, indem in atmIn/index.php die gutachtennr=1 ¸bergeben wird
+- in dig.php absolut auf adams-Server verweisenden Teil des uploaddir durch Variable aus connect.inc.php ersetzt
+
+[Jan08]
+- missing Files: 
+				einreichenFormular.txt (in einreichen.php angefordert) -> entsprechend ersetzt in forms-Ordner einreichenFormular.html
+				ablauf.php (in index.php gefordert) -> eigenes ersetzt
+				'tigerteam.php'-Link aus command.php, regex.php geloescht, da Datei nicht vorhanden	
+
+- missing tables:
+				studien-Tabelle anhand db-Abfrage aus auswerten_gutachter.php und studien.php eingef¸gt, war nicht vorhanden
+
+(zahlreiche kleinere Bugfixes sowie Trennung von Aufgaben-Men¸ und Aufgabenstellungen nicht dokumentiert)
+
+[30052007]
+
+- in require/include-Aufrufen absolute durch relative Pfade ersetzt:
+einreichen.php, anzeige_dokument.php, einreichen_reply.php, einreichen2.php, gutachten.php, gutachten_reply.php, 
+gutachten_anzeigen.php, gutachten_yes.php, ps2.php, punktestand.php, ranking.php, report.php, top.php,
+command.php, auswerten_gutachter.php, studien.php, anmerkung_gutachter.php, nachreichen_dokument.php, tool.php,
+status.php, dig.php, beauftragen.php, mailen_auftraege.php, begutachten_gutachter.php, anzeigen_auftrag.php,
+anzeigen_dokument.php, anzeigen_gutachter.php, anzeigen_gutachten.php, bewerten.php, tests.php
+
+- in top.php Zeile 29 - "db_error()" in "error_db()" ersetzt
+
+- in atmIn\index.php Zeile "anmerkung_gutachter" mit "anmerkung_gutachter.php" ersetzt
+
+[30062008]
+
+1. Ordnerstruktur verändert
+/atmIn 
+--> enthaelt alle Dateien aus v.0.0.1 /atmIn bis auf Bilder, sql-Dateien und css-Dateien 
+/config
+--common.inc.php (neu)
+--connect.php
+--header.php (neu)
+/config/db
+--reviewer_db_inserts.sql (ehemals atmIn/insert_parameter.sql)
+--reviewer_db.sql (ehemals atmIn/dm.sql, enthaelt jetzt auch das Anlegen der DB und das Anlegen eines Standard-Users fuer die DB)
+/css
+--webstyle_atmIn.css (ehemals atmIn/webstyle.css)
+--webstyle.css (ehemals Documents/webstyle.css)
+/forms
+-- ....
+/pix
+--enthaelt alle Bild-Dateien
+/templates
+--bottom-php
+--task_menu.php (neu)
+
+/uploads/aufgabeX
+--enthaelt X Unterordner fuer hochzuladende Loesungen für Aufgabe-nr. X 
+/users
+--index.php
+--ranking.php
+--regeln.php
+--regelnGutachten.php
+--top.php
+
+2. HTML-Titelzeilen geaendert in 
+/atmIn:
+aendern_gutachten.php, aendern_gutachten.php, aendern_zusatzpunkte.php, anmerkung_gutachter.php, anzeigen_dokument.php, anzeigen_gutachten.php, anzeigen_gutachter.php, auswerten_gutachter.php, beauftragen.php, begutachten_gutachter.php, bewerten.php, command.php, create_tables.php, dig.php, index.php, mailen_auftraege.php, nachreichen_dokument.php, nullpunkte.php, regex.php, statistik.php, status.php, tools.php
+/forms:
+alle
+
+3. neuer Name des Systems: 'Das Gutachtersystem' ist jetzt 'Review Your Peers'
+
+4. commandroot.php sowie Link dazu aus index.php entfernt
+
+5. common.inc.php
+enthaelt wichtige globale Variablen und wird in connect.php inkludiert
+##SMTP-Server
+ini_set("SMTP","mailserver"); 
+##Nummer der aktuellen Aufgabe
+$aufgabeNummer##webadmin-e-mail$admin_mailaddress="admin@mailserver.de";$admin_name = "Erna Muster";
+##server where you store the uploaded files$uploadserver="http://localhost/gutachtersystem_v011"; 
+##server where you stored the gutachtersystem
+$peerrevserver="http://localhost/gutachtersystem_v011";
+##uploadDir$uploadDir = "/uploads";
+
+6. connect.php
+- diverse Variablen in common.inc.php ausgelagert, um diese Datei auf Datenbank-Connect zu beschraenken - unvollstaendig umgesetzt
+
+7. gutachten_no.php integriert in Gutachten
+
+8. index.php mit Weiterleitung auf users/index.php angelegt im root-Ordner

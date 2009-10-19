@@ -1,0 +1,27 @@
+Ordnerstruktur erneut verändert. Der Forms-Ordner wurde mit dem Users-Ordner zusammen gelegt. Der AtmIn-Ordner heisst jetzt ganz normal 'admin'. Der task-Ordner ist im Hauptverzeichnis. 
+
+Überflüssige oder veraltete Dateien wurden entfernt.
+
+Bei den HTML-Seiten wurde das Tabellenlayout entfernt.
+
+Die Struktur der CSS-Dateien wurde systematisch aufgebaut.
+
+HTML und CSS der Users-Seiten wurde vereinheitlicht.
+
+Einen Installer ist hinzugefügt, der automatisch ausgeführt wird, wenn die Datei config/common.inc.php fehlt.
+Alle wichtigen Parameter werden abgefragt und in die Datei config/common.inc.php geschrieben.
+
+Die Termine sind über ein DOM-Interface frei editierbar.
+
+Terminfehler bei der letzten Aufgabe und beim letzten Gutachten sind behoben.
+
+Jede Menge kleinerer Fehler wurden korrigiert bzw. geglättet.
+
+Ein Debug-Modus kann zusammen mit einem fiktiven Kursdatum in der Datei debug.php aktiviert und deaktiviert werden
+
+Wichtige Routinen sind in die Datei config/lib.php ausgelagert
+
+Der Algorithmus zum Verteilen der Gutachten ist optimiert
+
+Das Gutachtersystem verarbeitet nun zwei Gruppen, die sich gegenseitig bewerten.
+

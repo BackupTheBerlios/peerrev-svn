@@ -1,0 +1,68 @@
+/* Copyright 2005, 2006 Jochen Koubek - v0.1.2. 
+
+For contributors see contributors.txt.
+
+This file is part of the software 'Review Your Peers'.
+
+'Review Your Peers' is free software; you can redistribute it and/or modify
+it under the terms of the MIT License.
+
+You should have received a copy of the MIT License
+along with this program. See COPYING.txt.
+The license-text is based on http://www.opensource.org/licenses/mit-license.php. */
+
+.user .menu {
+	display: block;
+	padding: .5em 0;
+}
+
+.user ul li {
+	margin: .5em 2em;
+}
+
+.user .menu ul li{
+	display: inline;
+	margin: .5em 1em;
+}
+
+.user .content {
+	margin: 2em 50px;
+	width: 800px;
+}
+
+.user .content h1 {
+	margin-top: 1em;
+}
+
+.user, .formular  {
+	margin: 20px auto;
+	width: 950px;
+}
+
+.formular #head {
+	margin-bottom: 2em;
+}
+
+.formular #foot {
+	margin-top: 2em;
+}
+
+.content h1 {
+	margin-bottom: 1em;
+}
+
+.content h2 {
+	margin-bottom: .7em;
+}
+
+.formular p {
+	margin: 1em 0;
+}
+
+.formular input[type="file"]{
+	padding: 2px 0; 
+}
+
+#punktestand table {
+	margin-top: 1em;
+}
